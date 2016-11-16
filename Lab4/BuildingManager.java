@@ -1,1 +1,4 @@
-package Lab4
+package Lab4;
+class BuildingManager{
+	
+}

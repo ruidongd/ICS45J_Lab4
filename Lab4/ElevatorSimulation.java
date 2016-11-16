@@ -1,5 +1,8 @@
-package Lab4
+package Lab4;
 class ElevatorSimulation{
+	private int totalTime;
+	private int simUnitTime;
+	private BuildingManager bm;
     public void start(){
 
     }
@@ -8,6 +11,6 @@ class ElevatorSimulation{
 
     }
     public void getConfig(){
-
+    	
     }
 }
