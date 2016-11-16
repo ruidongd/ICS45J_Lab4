@@ -11,7 +11,30 @@ class PassengerArrival{
 		timePeriod = 0;
 		expectedTimeOfArrival = 0;
 	}
+	public void setNumPassengers(int num)
+	{
+		numPassengers = num;
+	}
 
+	public void setTimePeriod(int t)
+	{
+		timePeriod = t;
+	}
+
+	public void setDestinationFloor(int df)
+	{
+		destinationFloor = d;
+	}
+
+	public void setExpectedTimeOfArrival(int eta)
+	{
+		expectedTimeOfArrival = eta;
+	}
+
+	public void readFromConfig()
+	{
+		
+	}
 	public int getNumPassengers()
 	{
 		return numPassengers;
@@ -32,24 +55,6 @@ class PassengerArrival{
 		return expectedTimeOfArrival;
 	}
 
-	public void setNumPassengers(int num)
-	{
-		numPassengers = num;
-	}
 
-	public void setTimePeriod(int t)
-	{
-		timePeriod = t;
-	}
-
-	public void setDestinationFloor(int df)
-	{
-		destinationFloor = d;
-	}
-
-	public void setExpectedTimeOfArrival(int eta)
-	{
-		expectedTimeOfArrival = eta;
-	}
 
 }
