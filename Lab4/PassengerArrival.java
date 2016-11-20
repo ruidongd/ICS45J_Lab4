@@ -23,7 +23,7 @@ class PassengerArrival{
 
 	public void setDestinationFloor(int df)
 	{
-		destinationFloor = d;
+		destinationFloor = df;
 	}
 
 	public void setExpectedTimeOfArrival(int eta)
