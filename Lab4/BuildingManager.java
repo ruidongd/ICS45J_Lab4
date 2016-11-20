@@ -12,15 +12,23 @@ class BuildingManager{
 		floors[start].setTotalDestinationRequests(num+floors[start].getTotalDestinationRequests(des), des);
 	}
 	public synchronized void updateCurrentPassengers(int start, int des, int num){
-		floors[start].setPassengerRequests(num+floors[start].getPassengerRequests(des), des);
+		floors[start].setPassengerRequests(num + floors[start].getPassengerRequests(des), des);
+	}
+	public synchronized void setCurrentPassengers(int start, int des, int num){
+		floors[start].setPassengerRequests(num, des);
 	}
 	public synchronized void updateTotalArr(int ID, int des, int num){
 		floors[des].setArrivedPassengers(num+floors[des].getArrivedPassengers(ID), ID);
 	}
-	public BuildingFloor getFloor(int index){
-		return floors[index];
+	public synchronized int getFloor(int index, int des){
+		int res = floors[index].getPassengerRequests(des);
+		updateCurrentPassengers(index, des, 0);
+		return res;
 	}
-	
+	public synchronized void updateApproachingElevator(int floor, int ID){
+		floors[floor].setApproachingElevator(ID);
+	}
+
 	public boolean havingRequest(int i){
 		for(int j = 0; j < 5; j++){
 			if(floors[i].getPassengerRequests(j) > 0)
@@ -38,5 +46,5 @@ class BuildingManager{
 		}
 		return -1;
 	}
-	
+
 }
