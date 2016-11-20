@@ -83,16 +83,16 @@ class ElevatorSimulation{
     	int currentTime = SimClock.getTime();
     	for(int i = 0; i < 5; ++i) {
 			for(int j = 0; j < listOfPA.get(i).size(); ++j) {
-				PassengerArrival currentPassenger = listOfPA.get(i).get(j);
-				if(currentPassenger.getExpectedTimeOfArrival() == currentTime) {
+				PassengerArrival currentPA = listOfPA.get(i).get(j);
+				if(currentPA.getExpectedTimeOfArrival() == currentTime) {
 					System.out.format("| TIME %4d | ELEVATOR #N/A | %d PASSENGER IS REQUESTING FROM FLOOR #%d TO FLOOR #%d\n\n",
-							currentTime, currentPassenger.getNumPassengers(), i,
-							currentPassenger.getDestinationFloor());
-					int costTime = currentPassenger.getTimePeriod();
-					currentPassenger.setExpectedTimeOfArrival(currentTime + currentTime);
-					int des = currentPassenger.getDestinationFloor();
-					int numOfPassengers = currentPassenger.getNumPassengers();
-					bm.update(i, des, numOfPassengers);
+							currentTime, currentPA.getNumPassengers(), i,
+							currentPA.getDestinationFloor());
+					currentPA.setExpectedTimeOfArrival(currentTime + currentPA.getTimePeriod());
+					int des = currentPA.getDestinationFloor();
+					int numOfPassengers = currentPA.getNumPassengers();
+					bm.updateTotalDes(i, des, numOfPassengers);
+					bm.updateCurrentPassengers(i, des, numOfPassengers);
 				}
 			}
 		}

@@ -5,12 +5,13 @@ public class ElevatorEvent {
 	private int des; 
 
 	private int expectedArrival;
-	
-	// Ordinary Constructor
-	public ElevatorEvent(int destination, int expectedArrival)
+	public ElevatorEvent(){
+		
+	}
+	public ElevatorEvent(int destination, int time)
 	{
-		this.des = destination;
-		this.expectedArrival = expectedArrival;
+		des = destination;
+		this.expectedArrival = time;
 	}
 	
 	public void setDestination(int destination) { des = destination; }
